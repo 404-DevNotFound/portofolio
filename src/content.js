@@ -5,7 +5,7 @@ export const profile = {
     'Ai Enthusiastic.',
     'I like to explore the world of AI and its applications. Besides that, I also enjoy writing. You can visit my community secarikkertas if you want ^^',
   ],
-  community: 'https://secarikkertas.my.id',
+  community: 'https://secarikkertas.id',
   linkedin: 'https://www.linkedin.com/in/richarddante18/',
   github: 'https://github.com/404-DevNotFound',
   kaggle:'https://www.kaggle.com/dantegunawan'

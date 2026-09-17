@@ -103,7 +103,7 @@ createApp({
   </section>
   <section v-else aria-labelledby="page-title">
    <header class="page-header"><h1 id="page-title">komunitas</h1></header>
-   <div class="community"><h2>Secarik Kertas</h2><a :href="profile.community" target="_blank" rel="noopener noreferrer">secarikkertas.my.id ↗</a></div>
+   <div class="community"><h2>Secarik Kertas</h2><a :href="profile.community" target="_blank" rel="noopener noreferrer">secarikkertas.id ↗</a></div>
   </section>
  </main>
  <button class="pet" :class="{happy:petHappy}" @click="pet" aria-label="Sapa kucing" title="Sapa kucing">
