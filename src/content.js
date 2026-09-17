@@ -20,6 +20,6 @@ export const projects = [
     year: 2026,
     tags: ['React', 'NeonDB'],
     image: '/secarikkertas.png',
-    source: 'https://secarikkertas.my.id',
+    source: 'https://github.com/404-DevNotFound/secarikkertas',
   },
 ];
