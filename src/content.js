@@ -8,6 +8,7 @@ export const profile = {
   community: 'https://secarikkertas.my.id',
   linkedin: 'https://www.linkedin.com/in/richarddante18/',
   github: 'https://github.com/404-DevNotFound',
+  kaggle:'https://www.kaggle.com/dantegunawan'
 };
 // Isi year dan tags dengan data sebenarnya. image dan source opsional.
 // Setiap proyek harus memiliki slug unik, title, description, dan details.
