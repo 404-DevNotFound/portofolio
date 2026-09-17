@@ -24,4 +24,16 @@ export const projects = [
     image: '/secarikkertas.png',
     source: 'https://github.com/404-DevNotFound/secarikkertas',
   },
+  {
+    slug: 'monitoring-wifi',
+    title: 'monitoring-wifi',
+    description: 'Aplikasi untuk memonitoring wifi.',
+    details: 'Setiap device yang masuk akan tercatat dalam sistem.',
+    url: '',
+    initials: 'AP',
+    year: 2026,
+    tags: ['Docker'],
+    image: '/monitor-bot.jpeg',
+    source: 'https://github.com/404-DevNotFound/monitoring-wifi'
+  }
 ];
