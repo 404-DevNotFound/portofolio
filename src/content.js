@@ -2,8 +2,8 @@ export const profile = {
   name: 'whotao',
   // Ganti teks perkenalan di bawah banner hello di sini.
   bio: [
-    'Tulis perkenalan singkatmu di sini.',
-    'Ceritakan apa yang kamu kerjakan, hal yang kamu sukai, atau proyek yang sedang kamu bangun.',
+    'Ai Enthusiastic.',
+    'I like to explore the world of AI and its applications. Besides that, I also enjoy writing. You can visit my community secarikkertas if you want ^^',
   ],
   community: 'https://secarikkertas.my.id',
 };
