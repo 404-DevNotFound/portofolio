@@ -57,7 +57,13 @@ createApp({
     <canvas ref="canvas" aria-hidden="true"></canvas>
     <h1 aria-label="hello. i&#39;m whotao"><span class="glitch" aria-hidden="true" data-text="hello. i&#39;m whotao">hello. i&#39;m whotao</span></h1>
    </div>
-   <div class="home-bio"><p v-for="(paragraph,index) in profile.bio" :key="index">{{paragraph}}</p></div>
+    <div class="home-bio">
+     <p v-for="(paragraph,index) in profile.bio" :key="index">{{paragraph}}</p>
+     <div v-if="profile.linkedin || profile.github" class="social-links" aria-label="Profil sosial">
+      <a v-if="profile.linkedin" :href="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a v-if="profile.github" :href="profile.github" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+     </div>
+    </div>
   </section>
   <section v-else-if="page==='projects'" aria-labelledby="page-title">
    <header class="page-header"><h1 id="page-title">projects</h1></header>
