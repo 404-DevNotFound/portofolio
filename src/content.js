@@ -26,3 +26,13 @@ export const projects = [
     source: 'https://github.com/404-DevNotFound/secarikkertas',
   },
 ];
+
+// Buku terbitan. Tambahkan buku baru ke daftar ini.
+export const books = [{
+  slug: 'mengakhiri-hidup-hanya-dalam-3-babak',
+  title: 'Mengakhiri Hidup Hanya Dalam 3 Babak',
+  author: 'Dante',
+  cover: '/book-three-acts.png',
+  publisher: 'Penerbit Kolofon',
+  purchaseUrl: 'https://penerbitkolofon.com/katalog-buku/mengakhiri-hidup-hanya-dalam-3-babak/',
+}];

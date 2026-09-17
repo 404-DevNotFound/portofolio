@@ -38,3 +38,11 @@ Font pixel VT323 disertakan melalui @fontsource. Font teks DM Sans dimuat dari G
 Kartu proyek membuka `/projects/detail/?id=slug`. Isi data di `src/content.js`: `slug` unik, `title`, `description`, `details`, `year`, `tags`, `url`, serta opsional `image` dan `source`. Tahun dan teknologi Secarik Kertas belum diberikan, sehingga ditandai belum diisi. Link website tetap tersedia di halaman detail.
 
 Pet memakai gambar kucing pemberian pengguna di `public/pet-cat.png`, ukuran lebar 78 px desktop dan 60 px mobile, tetap di kanan bawah. Klik pet untuk sapaan pixel “hi!”; animasi mengikuti reduced motion.
+
+## Bookshelf dan loading retro
+
+Halaman `/bookshelf/` tersedia di navigasi sebelum Komunitas. Edit array `books` di `src/content.js` untuk mengganti judul, penulis, sampul, penerbit dan `purchaseUrl`. Sampul buku saat ini disimpan sebagai `public/book-three-acts.png`.
+
+Loading screen memakai `public/loading-cat.mp4` dari referensi pengguna, dengan style `public/page-loader.css` dan perilaku `public/page-loader.js`. Muncul sekitar 1,25 detik jika aplikasi cepat siap, lalu menghilang; pengaman melepas overlay setelah 7 detik jika aplikasi gagal. Preferensi reduced motion mematikan gerakan video dan waktu tampil minimum. Semua halaman HTML menyertakan loader.
+
+Stiker retro pada Home mengambil tiga bagian dari `public/pixel-stickers.png` lewat background CSS. Build multi-halaman termasuk Bookshelf telah diperiksa.

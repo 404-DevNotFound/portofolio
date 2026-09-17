@@ -1,10 +1,10 @@
 import { createApp, ref, onMounted, onBeforeUnmount } from 'vue/dist/vue.esm-browser.prod.js';
 import '@fontsource/vt323/latin-400.css';
 import './style.css';
-import { profile, projects } from './content';
+import { profile, projects, books } from './content';
 
 const path = location.pathname.replace(/\/+$/, '');
-const page = path === '/projects/detail' ? 'detail' : path === '/projects' ? 'projects' : path === '/community' ? 'community' : 'home';
+const page = path === '/bookshelf' ? 'bookshelf' : path === '/projects/detail' ? 'detail' : path === '/projects' ? 'projects' : path === '/community' ? 'community' : 'home';
 document.title = page === 'home' ? "hello. i'm whotao" : `${page} — ${profile.name || 'portfolio'}`;
 createApp({
  setup() {
@@ -34,25 +34,27 @@ createApp({
    }
   }
   onMounted(()=>{
+   window.dispatchEvent(new Event('portfolio:ready'));
    try {light.value=localStorage.getItem('portfolio-theme')==='light';document.documentElement.classList.toggle('light',light.value)} catch {}
    if(!canvas.value) return;
    resizeObserver=new ResizeObserver(()=>{const r=canvas.value.getBoundingClientRect();width=r.width;height=r.height;const d=Math.min(devicePixelRatio,2);canvas.value.width=width*d;canvas.value.height=height*d;canvas.value.getContext('2d').setTransform(d,0,0,d,0,0)});
    resizeObserver.observe(canvas.value);frame=requestAnimationFrame(draw);
   });
   onBeforeUnmount(()=>{cancelAnimationFrame(frame);resizeObserver?.disconnect();clearTimeout(petTimer)});
-  return {page,profile,items,selected,projectHref,petHappy,pet,canvas,light,theme,move,leave:()=>pointer={x:-1000,y:-1000}};
+  return {page,profile,books,items,selected,projectHref,petHappy,pet,canvas,light,theme,move,leave:()=>pointer={x:-1000,y:-1000}};
  },
  template: `
  <a class="skip" href="#main">Lewati navigasi</a>
  <aside class="sidebar">
   <a class="wordmark" href="/">{{profile.name || 'portfolio'}}.</a>
   <nav aria-label="Navigasi utama">
-   <a v-for="item in [{id:'home',url:'/',label:'Home'},{id:'projects',url:'/projects/',label:'Projects'},{id:'community',url:'/community/',label:'Komunitas'}]" :href="item.url" :class="{active:page===item.id || (page==='detail' && item.id==='projects')}" :aria-current="page===item.id?'page':undefined">{{item.label}}</a>
+   <a v-for="item in [{id:'home',url:'/',label:'Home'},{id:'projects',url:'/projects/',label:'Projects'},{id:'bookshelf',url:'/bookshelf/',label:'Bookshelf'},{id:'community',url:'/community/',label:'Komunitas'}]" :href="item.url" :class="{active:page===item.id || (page==='detail' && item.id==='projects')}" :aria-current="page===item.id?'page':undefined">{{item.label}}</a>
   </nav>
   <button class="theme" @click="theme" :aria-label="light?'Gunakan tema gelap':'Gunakan tema terang'"><span aria-hidden="true">{{light?'☼':'☾'}}</span></button>
  </aside>
  <main id="main">
   <section v-if="page==='home'" class="home-page" aria-label="Home">
+   <div class="desktop-titlebar" aria-hidden="true"><span>whotao.exe</span><span>− □ ×</span></div>
    <div class="hero" @pointermove="move" @pointerleave="leave">
     <canvas ref="canvas" aria-hidden="true"></canvas>
     <h1 aria-label="hello. i&#39;m whotao"><span class="glitch" aria-hidden="true" data-text="hello. i&#39;m whotao">hello. i&#39;m whotao</span></h1>
@@ -65,6 +67,16 @@ createApp({
       <a v-if="profile.kaggle" :href="profile.kaggle" target="_blank" rel="noopener noreferrer">Kaggle ↗</a>
      </div>
     </div>
+   <div class="sticker-shelf" aria-hidden="true"><span class="pixel-sticker sticker-computer"></span><span class="pixel-sticker sticker-dino"></span><span class="pixel-sticker sticker-arcade"></span><span class="shelf-dashes">+ · · · +</span></div>
+  </section>
+  <section v-else-if="page==='bookshelf'" class="bookshelf-page" aria-labelledby="page-title">
+   <header class="page-header shelf-heading"><div><h1 id="page-title">bookshelf</h1><p>Buku yang kutulis.</p></div><span class="shelf-symbol" aria-hidden="true">[ {{String(books.length).padStart(2,'0')}} ]</span></header>
+   <div class="book-grid">
+    <article class="book-card" v-for="book in books" :key="book.slug">
+     <div class="book-stage"><a class="book-object" :href="book.purchaseUrl" target="_blank" rel="noopener noreferrer" :aria-label="'Lihat '+book.title+' di '+book.publisher"><img :src="book.cover" :alt="'Sampul '+book.title" width="1086" height="1448"><span class="book-spine" aria-hidden="true"></span></a></div>
+     <div class="book-copy"><span class="book-author">{{book.author}}</span><h2>{{book.title}}</h2><p>{{book.publisher}}</p><a class="pixel-button" :href="book.purchaseUrl" target="_blank" rel="noopener noreferrer">Beli di penerbit <span aria-hidden="true">↗</span></a></div>
+    </article>
+   </div>
   </section>
   <section v-else-if="page==='projects'" aria-labelledby="page-title">
    <header class="page-header"><h1 id="page-title">projects</h1></header>

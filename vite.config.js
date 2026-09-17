@@ -3,6 +3,6 @@ export default {
   esbuild: false,
   build: {
     minify: false,
-    rollupOptions: { input: { home: 'index.html', detail: 'projects/detail/index.html', projects: 'projects/index.html', community: 'community/index.html' } }
+    rollupOptions: { input: { home: 'index.html', bookshelf: 'bookshelf/index.html', detail: 'projects/detail/index.html', projects: 'projects/index.html', community: 'community/index.html' } }
   }
 };
