@@ -7,7 +7,8 @@ export const profile = {
   community: 'https://secarikkertas.id',
   linkedin: 'https://www.linkedin.com/in/richarddante18/',
   github: 'https://github.com/404-DevNotFound',
-  kaggle:'https://www.kaggle.com/dantegunawan'
+  kaggle:'https://www.kaggle.com/dantegunawan',
+  huggingface: 'https://huggingface.co/whotao1766'
 };
 // Isi year dan tags dengan data sebenarnya. image dan source opsional.
 // Setiap proyek harus memiliki slug unik, title, description, dan details.
@@ -23,6 +24,18 @@ export const projects = [
     tags: ['React', 'NeonDB'],
     image: '/secarikkertas.png',
     source: 'https://github.com/404-DevNotFound/secarikkertas',
+  },
+  {
+    slug: 'Smart Nutrition Scanner',
+    title: 'Smart Nutrition Scanner',
+    description: 'Tulis deskripsi singkat Smart Nutrition Scanner di sini.',
+    details: 'Tulis detail proyek Smart Nutrition Scanner di sini.\n\nContoh: aplikasi yang membantu pengguna menganalisis nutrisi dari gambar makanan atau rekomendasi pola makan.',
+    url: '',
+    initials: 'NS',
+    year: 2026,
+    tags: ['React', 'Computer Vision', 'Web App'],
+    image: '/smartnutritionscanner.png',
+    source: 'https://github.com/gregoandy76-glitch/NutriScan',
   },
 ];
 

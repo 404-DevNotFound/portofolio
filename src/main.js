@@ -61,10 +61,11 @@ createApp({
    </div>
     <div class="home-bio">
      <p v-for="(paragraph,index) in profile.bio" :key="index">{{paragraph}}</p>
-     <div v-if="profile.linkedin || profile.github || profile.kaggle" class="social-links" aria-label="Profil sosial">
+     <div v-if="profile.linkedin || profile.github || profile.kaggle || profile.huggingface" class="social-links" aria-label="Profil sosial">
       <a v-if="profile.linkedin" :href="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       <a v-if="profile.github" :href="profile.github" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       <a v-if="profile.kaggle" :href="profile.kaggle" target="_blank" rel="noopener noreferrer">Kaggle ↗</a>
+      <a v-if="profile.huggingface" :href="profile.huggingface" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a>
      </div>
     </div>
    <div class="sticker-shelf" aria-hidden="true"><span class="pixel-sticker sticker-computer"></span><span class="pixel-sticker sticker-dino"></span><span class="pixel-sticker sticker-arcade"></span><span class="shelf-dashes">+ · · · +</span></div>
