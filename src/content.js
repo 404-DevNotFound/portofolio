@@ -28,8 +28,8 @@ export const projects = [
   {
     slug: 'Smart Nutrition Scanner',
     title: 'Smart Nutrition Scanner',
-    description: 'Tulis deskripsi singkat Smart Nutrition Scanner di sini.',
-    details: 'Tulis detail proyek Smart Nutrition Scanner di sini.\n\nContoh: aplikasi yang membantu pengguna menganalisis nutrisi dari gambar makanan atau rekomendasi pola makan.',
+    description: '',
+    details: 'aplikasi yang membantu pengguna menganalisis nutrisi dari gambar makanan atau rekomendasi pola makan.',
     url: '',
     initials: 'NS',
     year: 2026,
